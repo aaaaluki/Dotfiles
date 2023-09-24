@@ -1,0 +1,49 @@
+swipe:
+  4:
+    left:
+      interval: 0.15
+      workspace: 'next' # Switch to next workspace
+      keypress:
+        LEFTSHIFT: 
+          window: 'next' # Move window to next workspace
+    right:
+      interval: 0.15
+      workspace: 'prev' # Switch to previous workspace
+      keypress:
+        LEFTSHIFT: 
+          window: 'prev' # Move window to previous workspace
+    up:
+      sendkey: 'LEFTCTRL+F9' # Workspace overview
+      keypress:
+        LEFTSHIFT: 
+          sendkey: 'LEFTCTRL+F10' # All workspaces overview
+  3:
+    left:
+      sendkey: 'LEFTALT+TAB' # Next window
+        # sendkey: 'LEFTALT+LEFT' # History back
+    right:
+      sendkey: 'LEFTALT+LEFTSHIFT+TAB' # Previous window
+        # sendkey: 'LEFTALT+RIGHT' # History forward
+    up:
+      sendkey: 'LEFTMETA+M' # Maxmimize
+    down:
+      sendkey: 'LEFTMETA+N' # Minimize
+
+hold:
+  4:
+    # Power key: XF86PowerOff
+    sendkey: 'POWER'
+  3:
+    sendkey: 'LEFTCTRL+F10' # All workspaces overview
+
+
+plugin: 
+  inputs:
+    libinput_command_input: # options for lib/plugin/inputs/libinput_command_input
+      enable-tap: true # click to tap
+      enable-dwt: true # disable tap while typing
+      show-keycodes: true # https://github.com/iberianpig/fusuma-plugin-keypress#add-show-keycode-option
+      verbose: true
+  executors:
+    wmctrl_executor:
+      wrap-navigation: true

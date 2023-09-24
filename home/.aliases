@@ -1,0 +1,64 @@
+# vim:syntax=sh filetype=sh
+## Alias section
+alias c='cd ..'
+alias clc='clear'
+alias cp='cp -i'                                                # Confirm before overwriting something
+alias df='df -h'                                                # Human-readable sizes
+alias free='free -m'                                            # Show sizes in MB
+alias ls='ls --color=always --group-directories-first'
+alias l='ls -lh'
+alias la='ls -Alh'
+# alias please='sudo $(fc -ln -1)' # Redo last commit with sudo
+alias please='sudo'
+alias tree='tree --dirsfirst'
+
+# java swing Anti-alias on fonts
+alias java='java -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
+
+# Miscelaneous
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
+alias pg='ps -aux | grep'
+alias quote='fortune -a | cowsay | lolcat'
+
+# switching to nvim
+alias vimm='/bin/vim'
+alias vim='nvim'
+
+# Git alias
+alias git-quick-stats='_MENU_THEME="legacy" git-quick-stats'
+alias ga='git add'
+alias gaa='git add .'
+alias gap='git add --patch'
+alias gb='git branch -av'
+alias gca='git commit --amend --no-edit'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gdl=$'git diff \'HEAD^\' \'HEAD\''
+alias gl='git log'
+alias glo='git log --oneline'
+alias gpa=$'git pull && git submodule foreach -q --recursive \'echo -e "\e[1mUpdating submodule \"$name\"\e[0m"; branch=$(git config -f $toplevel/.gitmodules submodule.$name.branch); git switch $branch; git pull; echo ""\''
+alias grc='git rebase --continue'
+alias gri='git rebase --interactive'
+alias grs='git restore --staged'
+alias grp='git restore --patch'
+alias ggs='git status'
+alias gsu=$'git submodule foreach -q --recursive \'echo -e "\e[1mUpdating submodule \"$name\"\e[0m"; branch=$(git config -f $toplevel/.gitmodules submodule.$name.branch); git switch $branch; git pull; echo ""\''
+alias commits='git log |grep "^commit [0-9a-f]" |wc -l'
+
+# Pacman aliases
+alias pac='pacman -S'
+alias pacr='pacman -Rsu'
+alias pacu='pacman -Syu'
+alias genpkglist='pacman -Qqen > ~/.pkg-list.txt && pacman -Qqem > ~/.pkg-aur.txt'
+
+# Kitty kittens
+alias kitty-keybinds='$VISUAL ~/.config/kitty/keybinds.conf'
+alias icat='kitty +kitten icat'
+alias kdiff='kitty +kitten diff'
+
+# DE/WM
+alias kde-restart='kquitapp5 plasmashell && kstart5 plasmashell'
+
+# Uni aliases
+alias upclink-2fa="gpg -q -d ~/.gnupg/upclink-secret.gpg | oathtool -d 6 --totp --base32 - | xclip -i -selection clipboard"
+
